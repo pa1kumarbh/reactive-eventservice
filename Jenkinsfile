@@ -3,7 +3,7 @@ node {
     
 
 		// Mark the code checkout 'stage'....
-		stage('Checkout from Bitbucket') {
+		stage('Checkout') {
 			checkout scm
 		}
 
