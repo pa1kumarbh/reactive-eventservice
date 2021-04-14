@@ -4,9 +4,6 @@ node {
     stage('Checkout') {
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins_github', url: 'https://github.com/pa1kumarbh/reactive-eventservice']]])
     }
-    stage('Build') {
-       sh "${mvnHome}/bin/mvn clean install -f /var/lib/jenkins/workspace/ci-cd/pom.xml"
-    }
     
     stage('Code quality') {
         withSonarQubeEnv('sonarserver') {
